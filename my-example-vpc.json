@@ -41,6 +41,14 @@
             },
             "Type": "AWS::EC2::RouteTable"
         },
+        "MyPublicRouteInternet": {
+            "Properties": {
+                "DestinationCidrBlock": "0.0.0.0/0",
+                "GatewayId": "MyInternetGateway",
+                "RouteTableId": "MyPublicRouteTable"
+            },
+            "Type": "AWS::EC2::Route"
+        },
         "MyPublicRouteTable": {
             "Properties": {
                 "Tags": [
