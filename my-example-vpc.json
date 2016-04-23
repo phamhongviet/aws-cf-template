@@ -27,6 +27,34 @@
             },
             "Type": "AWS::EC2::InternetGateway"
         },
+        "MyPrivateRouteTable": {
+            "Properties": {
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "MyPrivateRouteTable"
+                    }
+                ],
+                "VpcId": {
+                    "Ref": "MyExampleVpc"
+                }
+            },
+            "Type": "AWS::EC2::RouteTable"
+        },
+        "MyPublicRouteTable": {
+            "Properties": {
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "MyPublicRouteTable"
+                    }
+                ],
+                "VpcId": {
+                    "Ref": "MyExampleVpc"
+                }
+            },
+            "Type": "AWS::EC2::RouteTable"
+        },
         "MySubnet1": {
             "Properties": {
                 "AvailabilityZone": "us-east-1c",
