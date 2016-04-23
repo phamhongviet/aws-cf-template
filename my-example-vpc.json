@@ -57,7 +57,7 @@
                     "Ref": "MyPrivateRouteTable"
                 }
             },
-            "Type": "AWS::EC2::RouteTable"
+            "Type": "AWS::EC2::Route"
         },
         "MyPrivateRouteTable": {
             "Properties": {
