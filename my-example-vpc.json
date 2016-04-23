@@ -1,6 +1,12 @@
 {
     "AWSTemplateFormatVersion": "2010-09-09",
     "Resources": {
+        "MyElaticIP": {
+            "Properties": {
+                "Domain": "vpc"
+            },
+            "Type": "AWS::EC2::EIP"
+        },
         "MyExampleVpc": {
             "Properties": {
                 "CidrBlock": "172.16.128.0/20",
