@@ -1,0 +1,88 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Resources": {
+        "MyExampleVpc": {
+            "Properties": {
+                "CidrBlock": "172.16.128.0/20",
+                "EnableDnsHostnames": "false",
+                "EnableDnsSupport": "false",
+                "InstanceTenancy": "default",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "MyExampleVpc"
+                    }
+                ]
+            },
+            "Type": "AWS::EC2::VPC"
+        },
+        "MySubnet1": {
+            "Properties": {
+                "AvailabilityZone": "us-east-1c",
+                "CidrBlock": "172.16.128.0/24",
+                "MapPublicIpOnLaunch": "true",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "MySubnet1"
+                    }
+                ],
+                "VpcId": {
+                    "Ref": "MyExampleVpc"
+                }
+            },
+            "Type": "AWS::EC2::Subnet"
+        },
+        "MySubnet2": {
+            "Properties": {
+                "AvailabilityZone": "us-east-1d",
+                "CidrBlock": "172.16.129.0/24",
+                "MapPublicIpOnLaunch": "true",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "MySubnet2"
+                    }
+                ],
+                "VpcId": {
+                    "Ref": "MyExampleVpc"
+                }
+            },
+            "Type": "AWS::EC2::Subnet"
+        },
+        "MySubnet3": {
+            "Properties": {
+                "AvailabilityZone": "us-east-1c",
+                "CidrBlock": "172.16.130.0/24",
+                "MapPublicIpOnLaunch": "false",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "MySubnet3"
+                    }
+                ],
+                "VpcId": {
+                    "Ref": "MyExampleVpc"
+                }
+            },
+            "Type": "AWS::EC2::Subnet"
+        },
+        "MySubnet4": {
+            "Properties": {
+                "AvailabilityZone": "us-east-1d",
+                "CidrBlock": "172.16.131.0/24",
+                "MapPublicIpOnLaunch": "false",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "MySubnet4"
+                    }
+                ],
+                "VpcId": {
+                    "Ref": "MyExampleVpc"
+                }
+            },
+            "Type": "AWS::EC2::Subnet"
+        }
+    }
+}
