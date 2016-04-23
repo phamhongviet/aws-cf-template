@@ -3,9 +3,8 @@
 format() {
 	local file="$1"
 	local temp=`mktemp -u`
-	cp "$file" "$temp"
-	python2 -m json.tool <"$temp" >"$file"
-	rm -f "$temp"
+	python2 -m json.tool <"$file" >"$temp" && \
+	mv "$temp" "$file"
 }
 
 main() {
