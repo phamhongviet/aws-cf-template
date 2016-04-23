@@ -130,6 +130,17 @@
                 }
             },
             "Type": "AWS::EC2::Subnet"
+        },
+        "MyVPCGatewayAttachment": {
+            "Properties": {
+                "InternetGatewayId": {
+                    "Ref": "MyInternetGateway"
+                },
+                "VpcId": {
+                    "Ref": "MyExampleVpc"
+                }
+            },
+            "Type": "AWS::EC2::VPCGatewayAttachment"
         }
     }
 }
