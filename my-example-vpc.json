@@ -47,6 +47,18 @@
             },
             "Type": "AWS::EC2::NatGateway"
         },
+        "MyPrivateRouteInternet": {
+            "Properties": {
+                "DestinationCidrBlock": "0.0.0.0/0",
+                "NatGatewayId": {
+                    "Ref": "MyNATGateway"
+                },
+                "RouteTableId": {
+                    "Ref": "MyPrivateRouteTable"
+                }
+            },
+            "Type": "AWS::EC2::RouteTable"
+        },
         "MyPrivateRouteTable": {
             "Properties": {
                 "Tags": [
