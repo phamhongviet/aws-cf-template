@@ -33,6 +33,20 @@
             },
             "Type": "AWS::EC2::InternetGateway"
         },
+        "MyNATGateway": {
+            "Properties": {
+                "AllocationId": {
+                    "Fn::GetAtt": [
+                        "MyElaticIP",
+                        "AllocationId"
+                    ]
+                },
+                "SubnetId": {
+                    "Ref": "MySubnet1"
+                }
+            },
+            "Type": "AWS::EC2::NatGateway"
+        },
         "MyPrivateRouteTable": {
             "Properties": {
                 "Tags": [
