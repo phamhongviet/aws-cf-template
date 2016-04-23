@@ -16,6 +16,17 @@
             },
             "Type": "AWS::EC2::VPC"
         },
+        "MyInternetGateway": {
+            "Properties": {
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "MyInternetGateway"
+                    }
+                ]
+            },
+            "Type": "AWS::EC2::InternetGateway"
+        },
         "MySubnet1": {
             "Properties": {
                 "AvailabilityZone": "us-east-1c",
