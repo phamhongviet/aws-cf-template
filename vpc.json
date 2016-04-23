@@ -1,7 +1,7 @@
 {
     "AWSTemplateFormatVersion": "2010-09-09",
     "Resources": {
-        "my-example-vpc": {
+        "MyExampleVpc": {
             "Properties": {
                 "CidrBlock": "172.16.128.0/20",
                 "EnableDnsHostnames": "false",
@@ -9,8 +9,8 @@
                 "InstanceTenancy": "default",
                 "Tags": [
                     {
-                        "Key": "name",
-                        "Value": "my-example-vpc"
+                        "Key": "Name",
+                        "Value": "MyExampleVpc"
                     }
                 ]
             },
